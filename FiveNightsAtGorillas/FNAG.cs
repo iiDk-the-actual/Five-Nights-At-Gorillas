@@ -412,7 +412,7 @@ namespace FiveNightsAtGorillas
         IEnumerator PoweroutageDelay()
         {
             yield return new WaitForSeconds(67.8f);
-            Jumpscare();
+            Jumpscare("gorilla");
         }
 
         IEnumerator DingusRunDelay()
@@ -420,7 +420,7 @@ namespace FiveNightsAtGorillas
             yield return new WaitForSeconds(2);
             if (DoorManager.Data.LeftDoorOpen)
             {
-                Jumpscare();
+                Jumpscare("bingus");
             }
             else
             {
@@ -437,7 +437,10 @@ namespace FiveNightsAtGorillas
             TeleportPlayerBack();
             TimePowerManager.Data.StopEverything();
             SkyColorWhite();
-            RefrenceManager.Data.Jumpscares.SetActive(false);
+            foreach (GameObject obj in RefrenceManager.Data.Jumpscares.Values)
+            {
+                obj.SetActive(false);
+            }
             RefrenceManager.Data.JumpscareAnimation.StopPlayback();
             RefrenceManager.Data.JumpscareSound.Stop();
             SkyColorWhite();
