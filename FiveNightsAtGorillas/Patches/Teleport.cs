@@ -1,75 +1,30 @@
 ﻿// Stolen from https://github.com/Graicc/PracticeMod/blob/617a9f758077ea06cf0407a776580d6b021bcc35/PracticeMod/Patches/PlayerTeleportPatch.cs#L61
 // Used without permission, but what are you gonna do, sue me?
 
+using FiveNightsAtGorillas.Managers.Refrences;
 using GorillaLocomotion;
 using HarmonyLib;
+using OculusSampleFramework;
+using System;
 using System.Reflection;
 using UnityEngine;
-using System;
-using FiveNightsAtGorillas.Managers.Refrences;
 
 namespace FiveNightsAtGorillas.Managers.Teleport
 {
-    [HarmonyPatch(typeof(Player))]
+    [HarmonyPatch(typeof(GTPlayer))]
     [HarmonyPatch("LateUpdate", MethodType.Normal)]
     internal class Teleport
     {
-        private static bool _isTeleporting = false,
-            _rotate = false;
-        private static Vector3 _teleportPosition;
-        private static float _teleportRotation;
-        private static bool _killVelocity;
+        internal static Vector3 World2Player(Vector3 world) =>
+            world - GorillaTagger.Instance.bodyCollider.transform.position + GorillaTagger.Instance.transform.position;
 
-        internal static bool Prefix(Player __instance, ref Vector3 ___lastPosition, ref Vector3[] ___velocityHistory, ref Vector3 ___lastHeadPosition, ref Vector3 ___lastLeftHandPosition, ref Vector3 ___lastRightHandPosition, ref Vector3 ___currentVelocity, ref Vector3 ___denormalizedVelocityAverage)
-        {
-            try
-            {
-                if (_isTeleporting)
-                {
-
-                    var playerRigidBody = __instance.GetComponent<Rigidbody>();
-                    if (playerRigidBody != null)
-                    {
-                        Vector3 correctedPosition = _teleportPosition - __instance.bodyCollider.transform.position + __instance.transform.position;
-
-                        if (_killVelocity)
-                            playerRigidBody.velocity = Vector3.zero;
-
-                        __instance.transform.position = correctedPosition;
-                        if (_rotate)
-                            __instance.Turn(_teleportRotation - __instance.headCollider.transform.rotation.eulerAngles.y);
-
-                        ___lastPosition = correctedPosition;
-                        ___velocityHistory = new Vector3[__instance.velocityHistorySize];
-
-                        ___lastHeadPosition = __instance.headCollider.transform.position;
-                        var leftHandMethod = typeof(Player).GetMethod("GetCurrentLeftHandPosition",
-                            BindingFlags.NonPublic | BindingFlags.Instance);
-                        ___lastLeftHandPosition = (Vector3)leftHandMethod.Invoke(__instance, new object[] { });
-
-                        var rightHandMethod = typeof(Player).GetMethod("GetCurrentRightHandPosition",
-                            BindingFlags.NonPublic | BindingFlags.Instance);
-                        ___lastRightHandPosition = (Vector3)rightHandMethod.Invoke(__instance, new object[] { });
-                        ___currentVelocity = Vector3.zero;
-                        ___denormalizedVelocityAverage = Vector3.zero;
-                    }
-                    _isTeleporting = false;
-                    return true;
-                }
-            }
-            catch (Exception e) {  }
-            return true;
-        }
-
+        internal static int teleportFrame;
         internal static void TeleportPlayer(Vector3 destinationPosition, float destinationRotation, bool killVelocity = true)
         {
-            if (_isTeleporting)
+            if (teleportFrame == Time.frameCount)
                 return;
-            _killVelocity = killVelocity;
-            _teleportPosition = destinationPosition;
-            _teleportRotation = destinationRotation;
-            _isTeleporting = true;
-            _rotate = true;
+            GTPlayer.Instance.TeleportTo(World2Player(destinationPosition), Quaternion.Euler(0f, destinationRotation, 0f));
+            teleportFrame = Time.frameCount;
             RefrenceManager.Data.FNAGMAP.SetActive(true);
         }
     }
