@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FiveNightsAtGorillasUpdater")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49b221c341c5031fa16950fd1ee95d7d79564c1a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3daf2280cc98485bf17e7f1aa8c4e57159c19c90")]
 [assembly: System.Reflection.AssemblyProductAttribute("FiveNightsAtGorillasUpdater")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FiveNightsAtGorillasUpdater")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

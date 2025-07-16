@@ -35,7 +35,7 @@
       <HintPath>$(GameAssemblyPath)\Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="FiveNightsAtGorillas">
-      <HintPath>..\..\..\..\..\..\..\Program Files\Oculus\Software\Software\another-axiom-gorilla-tag\BepInEx\plugins\FiveNightsAtGorillas\FiveNightsAtGorillas.dll</HintPath>
+      <HintPath>$(PluginsPath)\FiveNightsAtGorillas\FiveNightsAtGorillas.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Security">
       <HintPath>$(GameAssemblyPath)\Mono.Security.dll</HintPath>
@@ -92,7 +92,7 @@
       <HintPath>$(GameAssemblyPath)\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>..\..\..\..\..\..\..\Program Files\Oculus\Software\Software\another-axiom-gorilla-tag\Gorilla Tag_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>$(GameAssemblyPath)\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>$(GameAssemblyPath)\Unity.Timeline.dll</HintPath>

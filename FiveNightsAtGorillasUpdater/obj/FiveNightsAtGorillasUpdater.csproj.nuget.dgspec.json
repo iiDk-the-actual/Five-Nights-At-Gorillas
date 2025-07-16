@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Code\\Five-Nights-At-Gorillas\\FiveNightsAtGorillasUpdater\\FiveNightsAtGorillasUpdater.csproj": {}
+    "G:\\Other Stuff\\Gorilla Tag Mods\\Five-Nights-At-Gorillas\\FiveNightsAtGorillasUpdater\\FiveNightsAtGorillasUpdater.csproj": {}
   },
   "projects": {
-    "C:\\Code\\Five-Nights-At-Gorillas\\FiveNightsAtGorillasUpdater\\FiveNightsAtGorillasUpdater.csproj": {
+    "G:\\Other Stuff\\Gorilla Tag Mods\\Five-Nights-At-Gorillas\\FiveNightsAtGorillasUpdater\\FiveNightsAtGorillasUpdater.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Code\\Five-Nights-At-Gorillas\\FiveNightsAtGorillasUpdater\\FiveNightsAtGorillasUpdater.csproj",
+        "projectUniqueName": "G:\\Other Stuff\\Gorilla Tag Mods\\Five-Nights-At-Gorillas\\FiveNightsAtGorillasUpdater\\FiveNightsAtGorillasUpdater.csproj",
         "projectName": "FiveNightsAtGorillasUpdater",
-        "projectPath": "C:\\Code\\Five-Nights-At-Gorillas\\FiveNightsAtGorillasUpdater\\FiveNightsAtGorillasUpdater.csproj",
-        "packagesPath": "C:\\Users\\Graze\\.nuget\\packages\\",
-        "outputPath": "C:\\Code\\Five-Nights-At-Gorillas\\FiveNightsAtGorillasUpdater\\obj\\",
+        "projectPath": "G:\\Other Stuff\\Gorilla Tag Mods\\Five-Nights-At-Gorillas\\FiveNightsAtGorillasUpdater\\FiveNightsAtGorillasUpdater.csproj",
+        "packagesPath": "C:\\Users\\Grayson\\.nuget\\packages\\",
+        "outputPath": "G:\\Other Stuff\\Gorilla Tag Mods\\Five-Nights-At-Gorillas\\FiveNightsAtGorillasUpdater\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Graze\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Grayson\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,7 +38,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "netstandard2.1": {
@@ -55,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\9.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

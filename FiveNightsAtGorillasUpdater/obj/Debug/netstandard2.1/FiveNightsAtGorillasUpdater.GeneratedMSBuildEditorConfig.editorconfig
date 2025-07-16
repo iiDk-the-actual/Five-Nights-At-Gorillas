@@ -1,5 +1,8 @@
 is_global = true
 build_property.RootNamespace = FiveNightsAtGorillasUpdater
-build_property.ProjectDir = C:\Code\Five-Nights-At-Gorillas\FiveNightsAtGorillasUpdater\
+build_property.ProjectDir = G:\Other Stuff\Gorilla Tag Mods\Five-Nights-At-Gorillas\FiveNightsAtGorillasUpdater\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 
