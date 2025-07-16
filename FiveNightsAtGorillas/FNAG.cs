@@ -22,10 +22,11 @@ using FiveNightsAtGorillas.Other.Scroll;
 using FiveNightsAtGorillas.Other.CustomNightAdd;
 using FiveNightsAtGorillas.Other.CustomNightSub;
 using FiveNightsAtGorillas.Other.BOOP;
+using Utilla.Attributes;
 
 namespace FiveNightsAtGorillas
 {
-    [ModdedGamemode("fnag", "FNAG", Utilla.Models.BaseGamemode.Casual)]
+    [ModdedGamemode("fnag", "FNAG", GorillaGameModes.GameModeType.Casual)]
     [BepInDependency("org.legoandmars.gorillatag.utilla")]
     [BepInPlugin(FNAGInfo.GUID, FNAGInfo.Name, FNAGInfo.Version)]
     public class FNAG : BaseUnityPlugin
