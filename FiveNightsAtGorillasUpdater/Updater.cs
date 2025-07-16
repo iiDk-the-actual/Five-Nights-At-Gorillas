@@ -83,7 +83,7 @@ namespace FNAGUpdater
 
         IEnumerator GetVersion()
         {
-            UnityWebRequest www = UnityWebRequest.Get("https://raw.githubusercontent.com/MrBanana01/Five-Nights-At-Gorillas/master/ModVersion");
+            UnityWebRequest www = UnityWebRequest.Get("https://raw.githubusercontent.com/iiDk-the-actual/Five-Nights-At-Gorillas/master/ModVersion");
             yield return www.SendWebRequest();
 
             if (www.result != UnityWebRequest.Result.Success)
